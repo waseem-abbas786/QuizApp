@@ -39,13 +39,12 @@ struct ContentView: View {
                 Color.indigo.opacity(0.1).ignoresSafeArea()
                 VStack {
                     Text(questions[currentIndex].question)
-                        .padding()
                         .font(.title2)
-                        .multilineTextAlignment(.center) // center align
-                        .lineLimit(3)                    // max 3 lines
-                        .truncationMode(.tail)           // show "..." if too long
-                        .frame(maxWidth: .infinity)
-                        .padding()
+                         .bold()
+                         .multilineTextAlignment(.center)
+                         .lineLimit(3)
+                         .minimumScaleFactor(0.7)
+                         .padding()
                     ForEach(questions[currentIndex].answers, id: \.self) { answer in
                         Button(answer) {
                           selectedAnswer = answer
